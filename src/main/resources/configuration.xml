@@ -2,8 +2,17 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:context="http://www.springframework.org/schema/context"
+
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--Указывает, где находятся value-->
+    <context:property-placeholder location="classpath:application.properties"/>
 
     <!--Бины без зависимостей-->
     <bean id="test" class="ru.learnUp.beans.Test"/>
@@ -13,7 +22,7 @@
         <constructor-arg name="b" ref="b"/>
     </bean>
     <bean id="b" class="ru.learnUp.beans.B">
-        <constructor-arg value="world"/>
-        <property name="version" value="1"/>
+        <constructor-arg value="${my.tag.value}"/>
+        <property name="version" value="${my.version.value}"/>
     </bean>
 </beans>
