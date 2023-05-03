@@ -10,7 +10,9 @@
     <bean id="test" class="ru.learnUp.beans.Test"/>
 
     <!--Бины с зависимостями-->
-    <bean id="a" class="ru.learnUp.beans.A">
-      <constructor-arg name="b" ref="b"/>
+    <bean init-method="initMethod"
+          id="a"
+          class="ru.learnUp.beans.A">
+        <constructor-arg name="b" ref="b"/>
     </bean>
 </beans>
