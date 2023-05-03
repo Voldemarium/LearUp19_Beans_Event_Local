@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Бины без зависимостей-->
+    <bean id="b" class="ru.learnUp.beans.B"/>
+    <bean id="test" class="ru.learnUp.beans.Test"/>
+
+    <!--Бины с зависимостями-->
+    <bean id="a" class="ru.learnUp.beans.A">
+      <property name="b" ref="b"/>
+    </bean>
+</beans>
