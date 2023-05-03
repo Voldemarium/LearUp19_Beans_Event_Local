@@ -5,10 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class A {
 	//Аннотация Autowired попросила Spring в поле, которое она аннотирует, подставить значение.
 	// Эта операция называется «инжектнуть» (inject)
-	@Autowired
-	private B b;
+	private final B b;
 
-	public void setB(B b) {
+	public A(B b) {
 		this.b = b;
 	}
 
