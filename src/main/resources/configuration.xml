@@ -25,4 +25,7 @@
         <constructor-arg value="${my.tag.value}"/>
         <property name="version" value="${my.version.value}"/>
     </bean>
+
+    <bean id="myEventListener" class="ru.learnUp.events.MyEventListener"/>
+    <bean id="myEventPublisher" class="ru.learnUp.events.MyEventPublisher"/>
 </beans>
